@@ -14,4 +14,4 @@ Requires three objects adjacent to the computer/turtle:
 I like to set the pattern provider to PUSH ingredients into 
 a double chest.
 
-<!-- todo img -->
+![image](https://github.com/user-attachments/assets/82b562d1-4abc-409d-9db3-0ba9040b5164)
