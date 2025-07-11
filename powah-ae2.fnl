@@ -9,6 +9,9 @@
 (local emerald "minecraft:emerald")
 (local star "minecraft:nether_star")
 (local redstoneBlock "minecraft:redstone_block")
+(local eyeOfEnder "minecraft:ender_eye")
+(local dielectricCasing "powah:dielectric_casing")
+(local tinyCap "powah:capacitor_basic_tiny")
 
 (local energizedSteel "powah:steel_energized")
 (local blazingCrystal "powah:crystal_blazing")
@@ -16,6 +19,7 @@
 (local nioticCrystal "powah:crystal_niotic")
 (local spiritedCrystal "powah:crystal_spirited")
 (local nitroCrystal "powah:crystal_nitro")
+(local enderCore "powah:ender_core")
 
 (local state {:orb nil :in nil :out nil})
 (var loopCraft nil)
@@ -74,7 +78,11 @@
                        {:inputs [{:name star :count 1}
                                  {:name redstoneBlock :count 2}
                                  {:name blazingCrystalBlock :count 1}]
-                        :output nitroCrystal}])
+                        :output nitroCrystal}
+                       {:inputs [{:name eyeOfEnder :count 1}
+                                 {:name dielectricCasing :count 1}
+                                 {:name tinyCap :count 1}]
+                        :output enderCore}])
 
 (fn get-item-count [inventory name]
   (var total 0)
@@ -116,7 +124,7 @@
 (fn init-peripherals []
   (set state.orb (peripheral.find "powah:energizing_orb"))
   (set state.in (peripheral.find "sophisticatedstorage:chest"))
-  (set state.out (peripheral.find "ae2:pattern_provider")))
+  (set state.out (peripheral.find "extendedae:ex_pattern_provider")))
 
 (fn check-peripherals []
   (print "=== State Initialization Check ===")
